@@ -1,0 +1,12 @@
+# Versions verified on Windows 11 / Python 3.11 (2026-11-20).
+# torch is not pinned so that a preinstalled CUDA build (Onyxia pytorch images) is kept.
+# Local CPU install: pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch>=2.2
+gymnasium[mujoco]==1.4.0
+mujoco==4.0.1
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.1.1
+matplotlib==3.11.2
+imageio[ffmpeg]==2.38.2
+imageio-ffmpeg==0.8.1

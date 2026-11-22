@@ -109,16 +109,24 @@ class DIAYN:
         return F.log_softmax(self.disc(self._tensor(obs)), -1).gather(1, z[:, None]).squeeze(1).cpu().numpy()
 
     def update(self, b):
-        """One gradient step on all nets from the same parameters, then the target update."""
+        """One gradient step on all nets from the same parameters, then the target update.
+
+        If the batch carries a 'reward' (finetuning on the task, finetune.py), it replaces the
+        pseudo-reward and the discriminator gets no gradient, so Adam leaves it unchanged.
+        """
         o, o2 = self.aug(b['obs'], b['z']), self.aug(b['next_obs'], b['z'])
 
         # Discriminator, and pseudo-reward log q(z|s_t) - log p(z) on the current state.
         logits = self.disc(b['obs'])
         log_q = F.log_softmax(logits, -1).gather(1, b['z'][:, None]).squeeze(1)
-        disc_loss = -log_q.mean()
-        reward = log_q.detach()
-        if self.add_p_z:
-            reward = reward - torch.log(self.p_z[b['z']] + EPS)
+        if 'reward' in b:
+            reward = b['reward']
+            disc_loss = torch.zeros((), device=reward.device)
+        else:
+            disc_loss = -log_q.mean()
+            reward = log_q.detach()
+            if self.add_p_z:
+                reward = reward - torch.log(self.p_z[b['z']] + EPS)
 
         # Q function.
         with torch.no_grad():
@@ -174,13 +182,15 @@ class DIAYN:
 class ReplayBuffer:
     """Stores env observations and the skill index. The one-hot is appended when sampling."""
 
-    def __init__(self, obs_dim, act_dim, size):
+    def __init__(self, obs_dim, act_dim, size, reward=False):
         self.max, self.size, self.ptr = size, 0, 0
         self.data = dict(obs=np.zeros((size, obs_dim), np.float32),
                          next_obs=np.zeros((size, obs_dim), np.float32),
                          act=np.zeros((size, act_dim), np.float32),
                          done=np.zeros(size, np.float32),
                          z=np.zeros(size, np.int64))
+        if reward:  # env reward, only stored when finetuning on the task
+            self.data['reward'] = np.zeros(size, np.float32)
 
     def add(self, **tr):
         for k, v in tr.items():

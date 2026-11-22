@@ -30,9 +30,11 @@ import torch
 
 from diayn.agent import DIAYN, ReplayBuffer, STAT_NAMES
 from diayn.envs import make_env
+from diayn.evaluation import rollout_skills
 from train import CsvLog
 
 EVAL_SEED = 123_456
+SELECT_SEED = 7_000_000  # skill-selection rollouts, disjoint from the evaluation states
 TRANSFERRED = {'diayn': ('policy', 'qf', 'vf', 'vf_target'), 'actor': ('policy',), 'random': ()}
 TRAIN_STATS = ['qf', 'vf', 'bellman_error', 'log_pi', 'kl_surrogate_loss', 'vf_loss']
 COLS = ['epoch', 'total_steps', 'time', 'steps_per_s', 'episodes', 'train_return', *TRAIN_STATS,
@@ -48,6 +50,9 @@ def parse_args():
     p.add_argument('--seed', type=int, default=1)
     p.add_argument('--log_dir', required=True)
     p.add_argument('--skill', type=int, default=None, help='default: best pretrained skill')
+    p.add_argument('--select_rollouts', type=int, default=None,
+                   help='choose the skill from this many new stochastic rollouts per skill '
+                        "instead of the pretraining evaluation's 10, and count only their steps")
     p.add_argument('--n_epochs', type=int, default=50)
     p.add_argument('--eval_episodes', type=int, default=10)
     p.add_argument('--device', default='cpu')
@@ -61,6 +66,28 @@ def best_skill(pre_dir, epoch):
     df = df[df.epoch == df.epoch[df.epoch <= epoch].max()]
     row = df.loc[df.return_mean.idxmax()]
     return int(row.skill), float(row.return_mean)
+
+
+def select_skill(ck, pcfg, obs_dim, act_dim, device, n_rollouts, seed):
+    """Best skill over n_rollouts new stochastic rollouts per skill of the pretrained policy.
+
+    Initial states come from seeds disjoint from the evaluation's. Returns the skill, its mean
+    return and the env steps used (reward-labelled steps that the cost-adjusted AUC counts).
+    """
+    pre_agent = DIAYN(obs_dim, act_dim, pcfg, device)
+    pre_agent.load_state_dict({k: ck['agent'][k] for k in ('policy', 'qf')})
+    L, S = pcfg['max_path_length'], pcfg['num_skills']
+    envs = [make_env(pcfg['env_id'], L) for _ in range(S)]
+    for i, e in enumerate(envs):
+        e.reset(seed=SELECT_SEED + 1000 * seed + i)
+    rets, steps = [], 0
+    for _ in range(n_rollouts):
+        ret, _, traces = rollout_skills(pre_agent, envs, L, record=True)
+        rets.append(ret)
+        steps += sum(len(t['info']) for t in traces)
+    mean = np.mean(rets, 0)
+    best = int(np.argmax(mean))
+    return best, float(mean[best]), steps
 
 
 @torch.no_grad()
@@ -104,21 +131,29 @@ def main():
     if args.skill is not None:
         skill, selection_steps = args.skill, 0
 
-    cfg = dict(pcfg)  # same networks and SAC hyperparameters as pretraining
-    cfg.update(init=args.init, seed=args.seed, pretrain_dir=str(pre), pretrain_seed=pcfg['seed'],
-               pretrain_epoch=ck['epoch'], skill=skill, skill_pretrain_return=skill_ret,
-               selection_steps=selection_steps, transferred=list(TRANSFERRED[args.init]),
-               n_epochs=args.n_epochs, eval_episodes=args.eval_episodes, eval_seed=EVAL_SEED)
-    (log_dir / 'config.json').write_text(json.dumps(cfg, indent=2))
-
     device = torch.device(args.device)
     torch.set_num_threads(args.threads)
     rng = np.random.default_rng(args.seed)
     torch.manual_seed(args.seed)
-    L = cfg['max_path_length']
-    env = make_env(cfg['env_id'], L)
-    eval_envs = [make_env(cfg['env_id'], L) for _ in range(args.eval_episodes)]
+    L = pcfg['max_path_length']
+    env = make_env(pcfg['env_id'], L)
+    eval_envs = [make_env(pcfg['env_id'], L) for _ in range(args.eval_episodes)]
     obs_dim, act_dim = env.observation_space.shape[0], env.action_space.shape[0]
+
+    arm, skill_pretrain_eval = args.init, skill
+    if args.select_rollouts and args.init != 'random' and args.skill is None:
+        skill, skill_ret, selection_steps = select_skill(ck, pcfg, obs_dim, act_dim, device,
+                                                         args.select_rollouts, args.seed)
+        arm = f'{args.init}_sel{args.select_rollouts}'
+
+    cfg = dict(pcfg)  # same networks and SAC hyperparameters as pretraining
+    cfg.update(init=args.init, arm=arm, seed=args.seed, pretrain_dir=str(pre),
+               pretrain_seed=pcfg['seed'], pretrain_epoch=ck['epoch'], skill=skill,
+               skill_pretrain_return=skill_ret, skill_pretrain_eval=skill_pretrain_eval,
+               select_rollouts=args.select_rollouts, selection_steps=selection_steps,
+               transferred=list(TRANSFERRED[args.init]), n_epochs=args.n_epochs,
+               eval_episodes=args.eval_episodes, eval_seed=EVAL_SEED)
+    (log_dir / 'config.json').write_text(json.dumps(cfg, indent=2))
 
     agent = DIAYN(obs_dim, act_dim, cfg, device)
     for k in TRANSFERRED[args.init]:

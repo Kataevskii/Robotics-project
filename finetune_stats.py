@@ -1,6 +1,10 @@
 """Statistics and figure of the policy-initialization experiment (output of finetune_sweep.py).
 
     python finetune_stats.py results/pendulum/finetune --out figures/pendulum-finetune
+    python finetune_stats.py results/pendulum/finetune results/pendulum/finetune_sel1         --out figures/pendulum-finetune-sel1
+
+Arms are told apart by `arm` in each run's config.json (the init, plus `_sel<n>` when
+finetune.py chose the skill with --select_rollouts n).
 
 Unit of analysis: in the diayn and actor arms, a pretrained DIAYN run. Its finetuning
 repetitions share the pretrained weights, so they are averaged first and are not independent
@@ -13,9 +17,12 @@ Fixed before the runs (not tuned on the results):
   finetuning epochs 0..N (area under the curve, normalised). One-sided Welch t-test, H1 DIAYN >
   random, alpha 0.05.
 - Secondary tests, Holm-corrected together: every other metric x comparison.
+- Follow-up comparisons (added after the main results, on the skill-selection cost) form their
+  own Holm family, so they leave the main family's corrected p-values unchanged.
 - `auc_cost_adjusted` counts the reward-labelled steps spent choosing the skill: the DIAYN curves
-  are shifted right by `selection_steps`, and every arm is averaged over the same window of
-  reward-labelled steps.
+  are shifted right by `selection_steps`. Each comparison averages both arms over the same window
+  of reward-labelled steps, which starts at the larger of the two arms' selection costs (columns
+  `auc_labelled_from_<start>` hold every window).
 """
 import argparse
 import json
@@ -27,19 +34,20 @@ from scipy import stats
 
 from diayn.plotting import MUTED, SERIES, plt
 
-ARMS = ['diayn', 'actor', 'random']
+ARMS = ['diayn', 'actor', 'random', 'diayn_sel1']
 LABELS = {'diayn': 'DIAYN init, actor + critic', 'actor': 'DIAYN init, actor only',
-          'random': 'Random init'}
-COLORS = {'diayn': SERIES[0], 'random': SERIES[1], 'actor': SERIES[2]}
-COMPARISONS = [('diayn', 'random'), ('actor', 'random'), ('diayn', 'actor')]
+          'random': 'Random init', 'diayn_sel1': 'DIAYN init, skill from 1 rollout each'}
+COLORS = {'diayn': SERIES[0], 'random': SERIES[1], 'actor': SERIES[2], 'diayn_sel1': SERIES[3]}
+FAMILIES = {'main': [('diayn', 'random'), ('actor', 'random'), ('diayn', 'actor')],
+            'followup': [('diayn_sel1', 'random'), ('diayn_sel1', 'diayn')]}
 PRIMARY = ('diayn', 'random', 'auc')
 LOWER_IS_BETTER = {'steps_to_threshold'}
 N_BOOT = 10_000
 
 
-def load(root):
+def load(roots):
     runs = []
-    for d in sorted(Path(root).glob('*/*/')):
+    for d in sorted(d for root in roots for d in Path(root).glob('*/*/')):
         if not (d / 'progress.csv').exists():
             continue
         cfg = json.loads((d / 'config.json').read_text())
@@ -48,21 +56,22 @@ def load(root):
             print(f'skipping unfinished run {d}')
             continue
         unit = f'pre{cfg["pretrain_seed"]}' if cfg['init'] != 'random' else d.name
-        runs.append(dict(init=cfg['init'], run=d.name, unit=unit, cfg=cfg,
+        runs.append(dict(init=cfg.get('arm', cfg['init']), run=f'{d.parent.name}/{d.name}', unit=unit, cfg=cfg,
                          curve=df.set_index('epoch')['eval_det_mean']))
     if not runs:
-        raise SystemExit(f'no finished runs under {root}')
+        raise SystemExit(f'no finished runs under {roots}')
     return runs
 
 
-def run_metrics(curve, cfg, threshold, window):
+def run_metrics(curve, cfg, threshold, starts, end):
     E, N = cfg['epoch_length'], cfg['n_epochs']
     steps = curve.index.to_numpy() * E
     y = curve.to_numpy()
     reached = np.flatnonzero(y >= threshold)
     # Reward-labelled steps: finetuning steps plus those spent choosing the skill.
     labelled = steps + cfg['selection_steps']
-    grid = np.arange(window[0], window[1] + 1, E)
+    cost_adjusted = {f'auc_labelled_from_{w}': np.interp(np.arange(w, end + 1, E), labelled, y).mean()
+                     for w in starts}
     return dict(
         auc=y.mean(),
         auc_first_10k=y[steps <= 10_000].mean(),
@@ -73,7 +82,7 @@ def run_metrics(curve, cfg, threshold, window):
         # Censored at N+1 epochs when never reached (rank tests handle it, means understate it).
         steps_to_threshold=steps[reached[0]] if reached.size else (N + 1) * E,
         reached_threshold=float(reached.size > 0),
-        auc_cost_adjusted=np.interp(grid, labelled, y).mean(),
+        **cost_adjusted,
     )
 
 
@@ -152,7 +161,8 @@ def plot(runs, arms, threshold, out, rng):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('root', help='output of finetune_sweep.py, e.g. results/pendulum/finetune')
+    p.add_argument('roots', nargs='+',
+                   help='outputs of finetune_sweep.py, e.g. results/pendulum/finetune')
     p.add_argument('--out', required=True)
     p.add_argument('--threshold', type=float, default=-200.0,
                    help='return counted as solved (Pendulum: -200)')
@@ -162,20 +172,23 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     rng = np.random.default_rng(args.seed)
 
-    runs = load(args.root)
+    runs = load(args.roots)
     arms = [a for a in ARMS if any(r['init'] == a for r in runs)]
     cfgs = [r['cfg'] for r in runs]
-    window = (max(c['selection_steps'] for c in cfgs),
-              min(c['n_epochs'] * c['epoch_length'] for c in cfgs))
+    starts = sorted({c['selection_steps'] for c in cfgs})
+    end = min(c['n_epochs'] * c['epoch_length'] for c in cfgs)
+    sel = {r['init']: r['cfg']['selection_steps'] for r in runs}  # one cost per arm
 
     per_run = pd.DataFrame([dict(init=r['init'], unit=r['unit'], run=r['run'],
                                  skill=r['cfg']['skill'],
                                  skill_pretrain_return=r['cfg']['skill_pretrain_return'],
-                                 **run_metrics(r['curve'], r['cfg'], args.threshold, window))
+                                 **run_metrics(r['curve'], r['cfg'], args.threshold, starts, end))
                             for r in runs])
     per_run.to_csv(out / 'per_run.csv', index=False)
     metrics = [c for c in per_run.columns
                if c not in ('init', 'unit', 'run', 'skill', 'skill_pretrain_return')]
+    tested = [m for m in metrics if not m.startswith('auc_labelled_from_')
+              and m != 'reached_threshold'] + ['auc_cost_adjusted']
     per_unit = per_run.groupby(['init', 'unit'], as_index=False)[
         ['skill_pretrain_return', *metrics]].mean()
     per_unit.to_csv(out / 'per_unit.csv', index=False)
@@ -183,23 +196,24 @@ def main():
     summary = per_unit.groupby('init')[metrics].agg(['mean', 'std', 'count']).T
     summary.to_csv(out / 'summary.csv')
 
-    tests = []
-    for a, b in COMPARISONS:
-        if a not in arms or b not in arms:
-            continue
-        for m in metrics:
-            if m == 'reached_threshold':
+    tests = []  # main family first, so its bootstrap draws do not depend on the follow-up arms
+    for family, comparisons in FAMILIES.items():
+        for a, b in comparisons:
+            if a not in arms or b not in arms:
                 continue
-            xa = per_unit.loc[per_unit.init == a, m].to_numpy()
-            xb = per_unit.loc[per_unit.init == b, m].to_numpy()
-            tests.append(dict(a=a, b=b, metric=m, n_a=len(xa), n_b=len(xb),
-                              primary=(a, b, m) == PRIMARY,
-                              **compare(xa, xb, m in LOWER_IS_BETTER, rng)))
+            for m in tested:
+                col = f'auc_labelled_from_{max(sel[a], sel[b])}' if m == 'auc_cost_adjusted' else m
+                xa = per_unit.loc[per_unit.init == a, col].to_numpy()
+                xb = per_unit.loc[per_unit.init == b, col].to_numpy()
+                tests.append(dict(family=family, a=a, b=b, metric=m, n_a=len(xa), n_b=len(xb),
+                                  primary=(a, b, m) == PRIMARY,
+                                  **compare(xa, xb, m in LOWER_IS_BETTER, rng)))
     tests = pd.DataFrame(tests)
-    sec = ~tests.primary
-    tests['p_welch_holm'] = np.nan
-    tests.loc[sec, 'p_welch_holm'] = holm(tests.loc[sec, 'p_welch'])
-    tests.loc[~sec, 'p_welch_holm'] = tests.loc[~sec, 'p_welch']
+    tests['p_welch_holm'] = tests.p_welch.where(tests.primary)
+    for family in FAMILIES:
+        sec = (tests.family == family) & ~tests.primary
+        if sec.any():
+            tests.loc[sec, 'p_welch_holm'] = holm(tests.loc[sec, 'p_welch'])
     tests.to_csv(out / 'tests.csv', index=False)
 
     rows = []
@@ -215,7 +229,7 @@ def main():
     print('Per unit:\n', per_unit[['init', 'unit', 'skill_pretrain_return', 'jumpstart', 'auc',
                                    'final', 'steps_to_threshold']].to_string(index=False))
     print('\nTests (one-sided, A better than B):')
-    print(tests[['a', 'b', 'metric', 'n_a', 'n_b', 'diff', 'ci95_low', 'ci95_high', 'hedges_g',
+    print(tests[['family', 'a', 'b', 'metric', 'n_a', 'n_b', 'diff', 'ci95_low', 'ci95_high', 'hedges_g',
                  'p_welch', 'p_mannwhitney', 'p_welch_holm']].to_string(index=False))
     prim = tests[tests.primary]
     if len(prim):

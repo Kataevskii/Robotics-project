@@ -1,0 +1,502 @@
+epoch     0 | steps     1000 |  150.7 steps/s | disc_acc 0.934 | best skill 34 return -141.5 | logq -16.34
+epoch     1 | steps     2000 |  135.0 steps/s | disc_acc 0.863
+epoch     2 | steps     3000 |  132.2 steps/s | disc_acc 0.728
+epoch     3 | steps     4000 |  133.0 steps/s | disc_acc 0.556
+epoch     4 | steps     5000 |  132.9 steps/s | disc_acc 0.459
+epoch     5 | steps     6000 |  132.4 steps/s | disc_acc 0.462
+epoch     6 | steps     7000 |  132.6 steps/s | disc_acc 0.437
+epoch     7 | steps     8000 |  135.3 steps/s | disc_acc 0.421
+epoch     8 | steps     9000 |  133.3 steps/s | disc_acc 0.374
+epoch     9 | steps    10000 |  136.7 steps/s | disc_acc 0.353
+epoch    10 | steps    11000 |  134.6 steps/s | disc_acc 0.347 | best skill 15 return -433.1 | logq -21.17
+epoch    11 | steps    12000 |  135.2 steps/s | disc_acc 0.321
+epoch    12 | steps    13000 |  136.6 steps/s | disc_acc 0.345
+epoch    13 | steps    14000 |  134.6 steps/s | disc_acc 0.353
+epoch    14 | steps    15000 |  131.9 steps/s | disc_acc 0.332
+epoch    15 | steps    16000 |  132.6 steps/s | disc_acc 0.326
+epoch    16 | steps    17000 |  129.1 steps/s | disc_acc 0.302
+epoch    17 | steps    18000 |  133.5 steps/s | disc_acc 0.303
+epoch    18 | steps    19000 |  138.2 steps/s | disc_acc 0.294
+epoch    19 | steps    20000 |  136.9 steps/s | disc_acc 0.265
+epoch    20 | steps    21000 |  131.7 steps/s | disc_acc 0.262 | best skill 34 return -457.2 | logq -6.70
+epoch    21 | steps    22000 |  137.3 steps/s | disc_acc 0.251
+epoch    22 | steps    23000 |  133.4 steps/s | disc_acc 0.237
+epoch    23 | steps    24000 |  133.4 steps/s | disc_acc 0.230
+epoch    24 | steps    25000 |  136.7 steps/s | disc_acc 0.232
+epoch    25 | steps    26000 |  135.4 steps/s | disc_acc 0.223
+epoch    26 | steps    27000 |  130.2 steps/s | disc_acc 0.233
+epoch    27 | steps    28000 |  135.1 steps/s | disc_acc 0.251
+epoch    28 | steps    29000 |  133.4 steps/s | disc_acc 0.242
+epoch    29 | steps    30000 |  132.2 steps/s | disc_acc 0.232
+epoch    30 | steps    31000 |  141.8 steps/s | disc_acc 0.222 | best skill 13 return -343.4 | logq -5.76
+epoch    31 | steps    32000 |  135.4 steps/s | disc_acc 0.216
+epoch    32 | steps    33000 |  135.5 steps/s | disc_acc 0.214
+epoch    33 | steps    34000 |  134.2 steps/s | disc_acc 0.232
+epoch    34 | steps    35000 |  123.8 steps/s | disc_acc 0.252
+epoch    35 | steps    36000 |  130.3 steps/s | disc_acc 0.254
+epoch    36 | steps    37000 |  135.0 steps/s | disc_acc 0.254
+epoch    37 | steps    38000 |  123.1 steps/s | disc_acc 0.254
+epoch    38 | steps    39000 |  132.0 steps/s | disc_acc 0.253
+epoch    39 | steps    40000 |  138.5 steps/s | disc_acc 0.257
+epoch    40 | steps    41000 |  134.1 steps/s | disc_acc 0.255 | best skill 14 return -367.9 | logq -7.32
+epoch    41 | steps    42000 |  137.2 steps/s | disc_acc 0.250
+epoch    42 | steps    43000 |  132.2 steps/s | disc_acc 0.235
+epoch    43 | steps    44000 |  136.9 steps/s | disc_acc 0.233
+epoch    44 | steps    45000 |  136.0 steps/s | disc_acc 0.240
+epoch    45 | steps    46000 |  135.7 steps/s | disc_acc 0.238
+epoch    46 | steps    47000 |  132.5 steps/s | disc_acc 0.242
+epoch    47 | steps    48000 |  135.2 steps/s | disc_acc 0.252
+epoch    48 | steps    49000 |  134.1 steps/s | disc_acc 0.250
+epoch    49 | steps    50000 |  131.2 steps/s | disc_acc 0.254
+epoch    50 | steps    51000 |  135.8 steps/s | disc_acc 0.259 | best skill 13 return -171.8 | logq -7.88
+epoch    51 | steps    52000 |  135.2 steps/s | disc_acc 0.262
+epoch    52 | steps    53000 |  135.1 steps/s | disc_acc 0.264
+epoch    53 | steps    54000 |  132.5 steps/s | disc_acc 0.271
+epoch    54 | steps    55000 |  133.3 steps/s | disc_acc 0.272
+epoch    55 | steps    56000 |  134.4 steps/s | disc_acc 0.275
+epoch    56 | steps    57000 |  133.7 steps/s | disc_acc 0.282
+epoch    57 | steps    58000 |  134.8 steps/s | disc_acc 0.278
+epoch    58 | steps    59000 |  134.6 steps/s | disc_acc 0.282
+epoch    59 | steps    60000 |  133.4 steps/s | disc_acc 0.275
+epoch    60 | steps    61000 |  136.3 steps/s | disc_acc 0.283 | best skill 1 return -182.4 | logq -7.00
+epoch    61 | steps    62000 |  135.8 steps/s | disc_acc 0.292
+epoch    62 | steps    63000 |  132.4 steps/s | disc_acc 0.288
+epoch    63 | steps    64000 |  134.7 steps/s | disc_acc 0.288
+epoch    64 | steps    65000 |  135.6 steps/s | disc_acc 0.291
+epoch    65 | steps    66000 |  136.7 steps/s | disc_acc 0.293
+epoch    66 | steps    67000 |  131.3 steps/s | disc_acc 0.295
+epoch    67 | steps    68000 |  136.6 steps/s | disc_acc 0.300
+epoch    68 | steps    69000 |  133.3 steps/s | disc_acc 0.292
+epoch    69 | steps    70000 |  134.0 steps/s | disc_acc 0.287
+epoch    70 | steps    71000 |  134.3 steps/s | disc_acc 0.284 | best skill 18 return -32.9 | logq -7.05
+epoch    71 | steps    72000 |  135.1 steps/s | disc_acc 0.283
+epoch    72 | steps    73000 |  132.1 steps/s | disc_acc 0.287
+epoch    73 | steps    74000 |  132.0 steps/s | disc_acc 0.294
+epoch    74 | steps    75000 |  131.6 steps/s | disc_acc 0.289
+epoch    75 | steps    76000 |  129.4 steps/s | disc_acc 0.282
+epoch    76 | steps    77000 |  133.0 steps/s | disc_acc 0.280
+epoch    77 | steps    78000 |  132.6 steps/s | disc_acc 0.276
+epoch    78 | steps    79000 |  134.9 steps/s | disc_acc 0.274
+epoch    79 | steps    80000 |  134.8 steps/s | disc_acc 0.277
+epoch    80 | steps    81000 |  132.0 steps/s | disc_acc 0.276 | best skill 18 return -33.8 | logq -7.49
+epoch    81 | steps    82000 |  134.0 steps/s | disc_acc 0.273
+epoch    82 | steps    83000 |  133.4 steps/s | disc_acc 0.270
+epoch    83 | steps    84000 |  136.5 steps/s | disc_acc 0.268
+epoch    84 | steps    85000 |  133.8 steps/s | disc_acc 0.270
+epoch    85 | steps    86000 |  132.7 steps/s | disc_acc 0.270
+epoch    86 | steps    87000 |  128.2 steps/s | disc_acc 0.266
+epoch    87 | steps    88000 |  131.3 steps/s | disc_acc 0.273
+epoch    88 | steps    89000 |  133.8 steps/s | disc_acc 0.276
+epoch    89 | steps    90000 |  137.8 steps/s | disc_acc 0.271
+epoch    90 | steps    91000 |  130.2 steps/s | disc_acc 0.270 | best skill 18 return -43.5 | logq -7.19
+epoch    91 | steps    92000 |  129.0 steps/s | disc_acc 0.277
+epoch    92 | steps    93000 |  130.5 steps/s | disc_acc 0.286
+epoch    93 | steps    94000 |  131.1 steps/s | disc_acc 0.290
+epoch    94 | steps    95000 |  134.1 steps/s | disc_acc 0.287
+epoch    95 | steps    96000 |  137.0 steps/s | disc_acc 0.288
+epoch    96 | steps    97000 |  128.9 steps/s | disc_acc 0.287
+epoch    97 | steps    98000 |  132.5 steps/s | disc_acc 0.285
+epoch    98 | steps    99000 |  130.5 steps/s | disc_acc 0.286
+epoch    99 | steps   100000 |  136.4 steps/s | disc_acc 0.282
+epoch   100 | steps   101000 |  137.5 steps/s | disc_acc 0.282 | best skill 18 return -38.6 | logq -6.42
+epoch   101 | steps   102000 |  132.3 steps/s | disc_acc 0.279
+epoch   102 | steps   103000 |  132.7 steps/s | disc_acc 0.277
+epoch   103 | steps   104000 |  132.0 steps/s | disc_acc 0.275
+epoch   104 | steps   105000 |  129.4 steps/s | disc_acc 0.280
+epoch   105 | steps   106000 |  130.7 steps/s | disc_acc 0.283
+epoch   106 | steps   107000 |  133.2 steps/s | disc_acc 0.285
+epoch   107 | steps   108000 |  131.9 steps/s | disc_acc 0.289
+epoch   108 | steps   109000 |  129.9 steps/s | disc_acc 0.284
+epoch   109 | steps   110000 |  131.9 steps/s | disc_acc 0.281
+epoch   110 | steps   111000 |  129.1 steps/s | disc_acc 0.282 | best skill 18 return -27.0 | logq -6.07
+epoch   111 | steps   112000 |  131.9 steps/s | disc_acc 0.280
+epoch   112 | steps   113000 |  132.5 steps/s | disc_acc 0.278
+epoch   113 | steps   114000 |  130.7 steps/s | disc_acc 0.271
+epoch   114 | steps   115000 |  127.4 steps/s | disc_acc 0.271
+epoch   115 | steps   116000 |  132.0 steps/s | disc_acc 0.271
+epoch   116 | steps   117000 |  130.8 steps/s | disc_acc 0.266
+epoch   117 | steps   118000 |  133.1 steps/s | disc_acc 0.270
+epoch   118 | steps   119000 |  131.2 steps/s | disc_acc 0.272
+epoch   119 | steps   120000 |  135.6 steps/s | disc_acc 0.275
+epoch   120 | steps   121000 |  130.0 steps/s | disc_acc 0.281 | best skill 21 return -54.8 | logq -5.83
+epoch   121 | steps   122000 |  137.2 steps/s | disc_acc 0.280
+epoch   122 | steps   123000 |  137.5 steps/s | disc_acc 0.281
+epoch   123 | steps   124000 |  131.4 steps/s | disc_acc 0.286
+epoch   124 | steps   125000 |  130.1 steps/s | disc_acc 0.284
+epoch   125 | steps   126000 |  133.2 steps/s | disc_acc 0.281
+epoch   126 | steps   127000 |  135.5 steps/s | disc_acc 0.278
+epoch   127 | steps   128000 |  121.7 steps/s | disc_acc 0.277
+epoch   128 | steps   129000 |  134.4 steps/s | disc_acc 0.274
+epoch   129 | steps   130000 |  134.5 steps/s | disc_acc 0.274
+epoch   130 | steps   131000 |  132.6 steps/s | disc_acc 0.274 | best skill 35 return -53.6 | logq -5.00
+epoch   131 | steps   132000 |  126.4 steps/s | disc_acc 0.277
+epoch   132 | steps   133000 |  134.6 steps/s | disc_acc 0.282
+epoch   133 | steps   134000 |  130.7 steps/s | disc_acc 0.285
+epoch   134 | steps   135000 |  134.5 steps/s | disc_acc 0.290
+epoch   135 | steps   136000 |  131.2 steps/s | disc_acc 0.290
+epoch   136 | steps   137000 |  138.0 steps/s | disc_acc 0.291
+epoch   137 | steps   138000 |  131.7 steps/s | disc_acc 0.290
+epoch   138 | steps   139000 |  134.7 steps/s | disc_acc 0.293
+epoch   139 | steps   140000 |  127.4 steps/s | disc_acc 0.295
+epoch   140 | steps   141000 |  133.9 steps/s | disc_acc 0.296 | best skill 35 return -54.7 | logq -4.42
+epoch   141 | steps   142000 |  132.1 steps/s | disc_acc 0.295
+epoch   142 | steps   143000 |  129.4 steps/s | disc_acc 0.290
+epoch   143 | steps   144000 |  130.8 steps/s | disc_acc 0.295
+epoch   144 | steps   145000 |  132.3 steps/s | disc_acc 0.293
+epoch   145 | steps   146000 |  135.0 steps/s | disc_acc 0.293
+epoch   146 | steps   147000 |  131.8 steps/s | disc_acc 0.292
+epoch   147 | steps   148000 |  136.6 steps/s | disc_acc 0.296
+epoch   148 | steps   149000 |  133.9 steps/s | disc_acc 0.295
+epoch   149 | steps   150000 |  130.3 steps/s | disc_acc 0.294
+epoch   150 | steps   151000 |  134.3 steps/s | disc_acc 0.296 | best skill 35 return -62.0 | logq -3.70
+epoch   151 | steps   152000 |  137.1 steps/s | disc_acc 0.293
+epoch   152 | steps   153000 |  126.7 steps/s | disc_acc 0.295
+epoch   153 | steps   154000 |  125.8 steps/s | disc_acc 0.297
+epoch   154 | steps   155000 |  137.1 steps/s | disc_acc 0.299
+epoch   155 | steps   156000 |  129.9 steps/s | disc_acc 0.296
+epoch   156 | steps   157000 |  133.8 steps/s | disc_acc 0.296
+epoch   157 | steps   158000 |  128.7 steps/s | disc_acc 0.292
+epoch   158 | steps   159000 |  129.9 steps/s | disc_acc 0.290
+epoch   159 | steps   160000 |  131.8 steps/s | disc_acc 0.292
+epoch   160 | steps   161000 |  129.6 steps/s | disc_acc 0.294 | best skill 14 return -72.4 | logq -3.47
+epoch   161 | steps   162000 |  132.4 steps/s | disc_acc 0.293
+epoch   162 | steps   163000 |  134.1 steps/s | disc_acc 0.295
+epoch   163 | steps   164000 |  135.8 steps/s | disc_acc 0.296
+epoch   164 | steps   165000 |  133.1 steps/s | disc_acc 0.300
+epoch   165 | steps   166000 |  136.0 steps/s | disc_acc 0.297
+epoch   166 | steps   167000 |  129.5 steps/s | disc_acc 0.297
+epoch   167 | steps   168000 |  138.2 steps/s | disc_acc 0.296
+epoch   168 | steps   169000 |  132.2 steps/s | disc_acc 0.295
+epoch   169 | steps   170000 |  133.0 steps/s | disc_acc 0.297
+epoch   170 | steps   171000 |  137.3 steps/s | disc_acc 0.299 | best skill 14 return -28.4 | logq -3.53
+epoch   171 | steps   172000 |  130.5 steps/s | disc_acc 0.300
+epoch   172 | steps   173000 |  132.1 steps/s | disc_acc 0.298
+epoch   173 | steps   174000 |  128.4 steps/s | disc_acc 0.297
+epoch   174 | steps   175000 |  134.2 steps/s | disc_acc 0.296
+epoch   175 | steps   176000 |  133.7 steps/s | disc_acc 0.303
+epoch   176 | steps   177000 |  137.3 steps/s | disc_acc 0.306
+epoch   177 | steps   178000 |  135.1 steps/s | disc_acc 0.304
+epoch   178 | steps   179000 |  126.4 steps/s | disc_acc 0.302
+epoch   179 | steps   180000 |  132.7 steps/s | disc_acc 0.303
+epoch   180 | steps   181000 |  131.6 steps/s | disc_acc 0.304 | best skill 5 return -44.4 | logq -3.33
+epoch   181 | steps   182000 |  131.6 steps/s | disc_acc 0.303
+epoch   182 | steps   183000 |  134.2 steps/s | disc_acc 0.303
+epoch   183 | steps   184000 |  138.3 steps/s | disc_acc 0.304
+epoch   184 | steps   185000 |  133.3 steps/s | disc_acc 0.305
+epoch   185 | steps   186000 |  134.2 steps/s | disc_acc 0.306
+epoch   186 | steps   187000 |  131.7 steps/s | disc_acc 0.308
+epoch   187 | steps   188000 |  134.0 steps/s | disc_acc 0.309
+epoch   188 | steps   189000 |  132.8 steps/s | disc_acc 0.305
+epoch   189 | steps   190000 |  130.8 steps/s | disc_acc 0.309
+epoch   190 | steps   191000 |  130.7 steps/s | disc_acc 0.308 | best skill 5 return -31.4 | logq -3.41
+epoch   191 | steps   192000 |  128.9 steps/s | disc_acc 0.308
+epoch   192 | steps   193000 |  135.7 steps/s | disc_acc 0.308
+epoch   193 | steps   194000 |  130.5 steps/s | disc_acc 0.308
+epoch   194 | steps   195000 |  134.2 steps/s | disc_acc 0.314
+epoch   195 | steps   196000 |  134.1 steps/s | disc_acc 0.312
+epoch   196 | steps   197000 |  128.8 steps/s | disc_acc 0.313
+epoch   197 | steps   198000 |  134.4 steps/s | disc_acc 0.311
+epoch   198 | steps   199000 |  134.3 steps/s | disc_acc 0.308
+epoch   199 | steps   200000 |  132.2 steps/s | disc_acc 0.309
+epoch   200 | steps   201000 |  132.0 steps/s | disc_acc 0.314 | best skill 5 return -19.6 | logq -3.33
+epoch   201 | steps   202000 |  133.6 steps/s | disc_acc 0.316
+epoch   202 | steps   203000 |  133.4 steps/s | disc_acc 0.318
+epoch   203 | steps   204000 |  131.5 steps/s | disc_acc 0.319
+epoch   204 | steps   205000 |  131.6 steps/s | disc_acc 0.315
+epoch   205 | steps   206000 |  135.0 steps/s | disc_acc 0.314
+epoch   206 | steps   207000 |  133.7 steps/s | disc_acc 0.310
+epoch   207 | steps   208000 |  130.5 steps/s | disc_acc 0.309
+epoch   208 | steps   209000 |  130.4 steps/s | disc_acc 0.309
+epoch   209 | steps   210000 |  134.9 steps/s | disc_acc 0.314
+epoch   210 | steps   211000 |  120.5 steps/s | disc_acc 0.319 | best skill 5 return -33.3 | logq -2.93
+epoch   211 | steps   212000 |  126.1 steps/s | disc_acc 0.316
+epoch   212 | steps   213000 |  134.9 steps/s | disc_acc 0.316
+epoch   213 | steps   214000 |  137.4 steps/s | disc_acc 0.319
+epoch   214 | steps   215000 |  129.0 steps/s | disc_acc 0.319
+epoch   215 | steps   216000 |  133.8 steps/s | disc_acc 0.319
+epoch   216 | steps   217000 |  128.7 steps/s | disc_acc 0.320
+epoch   217 | steps   218000 |  131.4 steps/s | disc_acc 0.322
+epoch   218 | steps   219000 |  130.0 steps/s | disc_acc 0.320
+epoch   219 | steps   220000 |  134.2 steps/s | disc_acc 0.322
+epoch   220 | steps   221000 |  129.3 steps/s | disc_acc 0.323 | best skill 5 return -35.6 | logq -2.80
+epoch   221 | steps   222000 |  134.9 steps/s | disc_acc 0.324
+epoch   222 | steps   223000 |  134.4 steps/s | disc_acc 0.320
+epoch   223 | steps   224000 |  132.7 steps/s | disc_acc 0.324
+epoch   224 | steps   225000 |  136.7 steps/s | disc_acc 0.328
+epoch   225 | steps   226000 |  137.1 steps/s | disc_acc 0.324
+epoch   226 | steps   227000 |  135.1 steps/s | disc_acc 0.328
+epoch   227 | steps   228000 |  132.5 steps/s | disc_acc 0.325
+epoch   228 | steps   229000 |  131.7 steps/s | disc_acc 0.324
+epoch   229 | steps   230000 |  133.9 steps/s | disc_acc 0.326
+epoch   230 | steps   231000 |  126.0 steps/s | disc_acc 0.327 | best skill 5 return -54.0 | logq -2.64
+epoch   231 | steps   232000 |  127.4 steps/s | disc_acc 0.327
+epoch   232 | steps   233000 |  132.1 steps/s | disc_acc 0.324
+epoch   233 | steps   234000 |  135.9 steps/s | disc_acc 0.325
+epoch   234 | steps   235000 |  132.9 steps/s | disc_acc 0.330
+epoch   235 | steps   236000 |  128.1 steps/s | disc_acc 0.330
+epoch   236 | steps   237000 |  129.9 steps/s | disc_acc 0.329
+epoch   237 | steps   238000 |  135.8 steps/s | disc_acc 0.328
+epoch   238 | steps   239000 |  131.9 steps/s | disc_acc 0.330
+epoch   239 | steps   240000 |  130.1 steps/s | disc_acc 0.330
+epoch   240 | steps   241000 |  129.0 steps/s | disc_acc 0.330 | best skill 5 return -43.7 | logq -2.51
+epoch   241 | steps   242000 |  145.8 steps/s | disc_acc 0.332
+epoch   242 | steps   243000 |  152.4 steps/s | disc_acc 0.331
+epoch   243 | steps   244000 |  154.6 steps/s | disc_acc 0.335
+epoch   244 | steps   245000 |  154.8 steps/s | disc_acc 0.336
+epoch   245 | steps   246000 |  152.8 steps/s | disc_acc 0.335
+epoch   246 | steps   247000 |  154.8 steps/s | disc_acc 0.337
+epoch   247 | steps   248000 |  154.1 steps/s | disc_acc 0.336
+epoch   248 | steps   249000 |  152.6 steps/s | disc_acc 0.337
+epoch   249 | steps   250000 |  154.4 steps/s | disc_acc 0.340
+epoch   250 | steps   251000 |  153.0 steps/s | disc_acc 0.341 | best skill 5 return -39.4 | logq -2.32
+epoch   251 | steps   252000 |  153.4 steps/s | disc_acc 0.339
+epoch   252 | steps   253000 |  160.2 steps/s | disc_acc 0.337
+epoch   253 | steps   254000 |  165.6 steps/s | disc_acc 0.339
+epoch   254 | steps   255000 |  164.4 steps/s | disc_acc 0.342
+epoch   255 | steps   256000 |  163.1 steps/s | disc_acc 0.343
+epoch   256 | steps   257000 |  161.6 steps/s | disc_acc 0.342
+epoch   257 | steps   258000 |  162.5 steps/s | disc_acc 0.343
+epoch   258 | steps   259000 |  163.5 steps/s | disc_acc 0.343
+epoch   259 | steps   260000 |  164.3 steps/s | disc_acc 0.345
+epoch   260 | steps   261000 |  163.5 steps/s | disc_acc 0.348 | best skill 5 return -31.0 | logq -2.29
+epoch   261 | steps   262000 |  162.3 steps/s | disc_acc 0.351
+epoch   262 | steps   263000 |  155.9 steps/s | disc_acc 0.350
+epoch   263 | steps   264000 |  162.2 steps/s | disc_acc 0.349
+epoch   264 | steps   265000 |  161.3 steps/s | disc_acc 0.353
+epoch   265 | steps   266000 |  162.3 steps/s | disc_acc 0.356
+epoch   266 | steps   267000 |  165.9 steps/s | disc_acc 0.354
+epoch   267 | steps   268000 |  165.8 steps/s | disc_acc 0.353
+epoch   268 | steps   269000 |  161.6 steps/s | disc_acc 0.356
+epoch   269 | steps   270000 |  163.4 steps/s | disc_acc 0.355
+epoch   270 | steps   271000 |  164.9 steps/s | disc_acc 0.353 | best skill 5 return -27.4 | logq -2.26
+epoch   271 | steps   272000 |  164.3 steps/s | disc_acc 0.359
+epoch   272 | steps   273000 |  165.0 steps/s | disc_acc 0.357
+epoch   273 | steps   274000 |  161.6 steps/s | disc_acc 0.359
+epoch   274 | steps   275000 |  157.2 steps/s | disc_acc 0.360
+epoch   275 | steps   276000 |  163.6 steps/s | disc_acc 0.361
+epoch   276 | steps   277000 |  162.4 steps/s | disc_acc 0.362
+epoch   277 | steps   278000 |  164.5 steps/s | disc_acc 0.361
+epoch   278 | steps   279000 |  164.0 steps/s | disc_acc 0.363
+epoch   279 | steps   280000 |  163.9 steps/s | disc_acc 0.362
+epoch   280 | steps   281000 |  165.9 steps/s | disc_acc 0.363 | best skill 5 return -32.7 | logq -2.17
+epoch   281 | steps   282000 |  162.4 steps/s | disc_acc 0.361
+epoch   282 | steps   283000 |  162.0 steps/s | disc_acc 0.365
+epoch   283 | steps   284000 |  163.8 steps/s | disc_acc 0.364
+epoch   284 | steps   285000 |  166.1 steps/s | disc_acc 0.365
+epoch   285 | steps   286000 |  164.2 steps/s | disc_acc 0.368
+epoch   286 | steps   287000 |  161.3 steps/s | disc_acc 0.372
+epoch   287 | steps   288000 |  162.2 steps/s | disc_acc 0.373
+epoch   288 | steps   289000 |  163.1 steps/s | disc_acc 0.372
+epoch   289 | steps   290000 |  164.2 steps/s | disc_acc 0.369
+epoch   290 | steps   291000 |  162.7 steps/s | disc_acc 0.372 | best skill 5 return -37.5 | logq -2.14
+epoch   291 | steps   292000 |  163.5 steps/s | disc_acc 0.370
+epoch   292 | steps   293000 |  164.9 steps/s | disc_acc 0.367
+epoch   293 | steps   294000 |  164.6 steps/s | disc_acc 0.364
+epoch   294 | steps   295000 |  163.6 steps/s | disc_acc 0.369
+epoch   295 | steps   296000 |  163.7 steps/s | disc_acc 0.369
+epoch   296 | steps   297000 |  165.3 steps/s | disc_acc 0.371
+epoch   297 | steps   298000 |  166.2 steps/s | disc_acc 0.369
+epoch   298 | steps   299000 |  166.8 steps/s | disc_acc 0.371
+epoch   299 | steps   300000 |  169.8 steps/s | disc_acc 0.369
+epoch   300 | steps   301000 |  162.7 steps/s | disc_acc 0.374 | best skill 5 return -34.7 | logq -2.23
+epoch   301 | steps   302000 |  164.2 steps/s | disc_acc 0.374
+epoch   302 | steps   303000 |  164.2 steps/s | disc_acc 0.377
+epoch   303 | steps   304000 |  164.4 steps/s | disc_acc 0.376
+epoch   304 | steps   305000 |  163.0 steps/s | disc_acc 0.376
+epoch   305 | steps   306000 |  163.7 steps/s | disc_acc 0.376
+epoch   306 | steps   307000 |  163.1 steps/s | disc_acc 0.379
+epoch   307 | steps   308000 |  164.5 steps/s | disc_acc 0.377
+epoch   308 | steps   309000 |  164.8 steps/s | disc_acc 0.379
+epoch   309 | steps   310000 |  161.9 steps/s | disc_acc 0.378
+epoch   310 | steps   311000 |  163.7 steps/s | disc_acc 0.378 | best skill 5 return -36.0 | logq -2.16
+epoch   311 | steps   312000 |  163.7 steps/s | disc_acc 0.379
+epoch   312 | steps   313000 |  163.1 steps/s | disc_acc 0.382
+epoch   313 | steps   314000 |  162.6 steps/s | disc_acc 0.380
+epoch   314 | steps   315000 |  166.8 steps/s | disc_acc 0.380
+epoch   315 | steps   316000 |  162.9 steps/s | disc_acc 0.376
+epoch   316 | steps   317000 |  163.4 steps/s | disc_acc 0.378
+epoch   317 | steps   318000 |  163.9 steps/s | disc_acc 0.377
+epoch   318 | steps   319000 |  164.5 steps/s | disc_acc 0.376
+epoch   319 | steps   320000 |  165.4 steps/s | disc_acc 0.376
+epoch   320 | steps   321000 |  163.6 steps/s | disc_acc 0.375 | best skill 5 return -35.3 | logq -2.20
+epoch   321 | steps   322000 |  165.9 steps/s | disc_acc 0.375
+epoch   322 | steps   323000 |  157.1 steps/s | disc_acc 0.378
+epoch   323 | steps   324000 |  160.7 steps/s | disc_acc 0.377
+epoch   324 | steps   325000 |  158.7 steps/s | disc_acc 0.380
+epoch   325 | steps   326000 |  164.3 steps/s | disc_acc 0.381
+epoch   326 | steps   327000 |  161.8 steps/s | disc_acc 0.381
+epoch   327 | steps   328000 |  160.7 steps/s | disc_acc 0.379
+epoch   328 | steps   329000 |  166.3 steps/s | disc_acc 0.381
+epoch   329 | steps   330000 |  165.2 steps/s | disc_acc 0.380
+epoch   330 | steps   331000 |  163.0 steps/s | disc_acc 0.379 | best skill 5 return -39.2 | logq -2.15
+epoch   331 | steps   332000 |  165.4 steps/s | disc_acc 0.380
+epoch   332 | steps   333000 |  162.8 steps/s | disc_acc 0.382
+epoch   333 | steps   334000 |  164.7 steps/s | disc_acc 0.381
+epoch   334 | steps   335000 |  164.5 steps/s | disc_acc 0.384
+epoch   335 | steps   336000 |  163.3 steps/s | disc_acc 0.382
+epoch   336 | steps   337000 |  162.0 steps/s | disc_acc 0.383
+epoch   337 | steps   338000 |  161.7 steps/s | disc_acc 0.382
+epoch   338 | steps   339000 |  164.3 steps/s | disc_acc 0.383
+epoch   339 | steps   340000 |  163.3 steps/s | disc_acc 0.384
+epoch   340 | steps   341000 |  163.9 steps/s | disc_acc 0.384 | best skill 5 return -45.3 | logq -2.05
+epoch   341 | steps   342000 |  165.3 steps/s | disc_acc 0.386
+epoch   342 | steps   343000 |  164.1 steps/s | disc_acc 0.386
+epoch   343 | steps   344000 |  164.3 steps/s | disc_acc 0.388
+epoch   344 | steps   345000 |  162.4 steps/s | disc_acc 0.388
+epoch   345 | steps   346000 |  166.7 steps/s | disc_acc 0.389
+epoch   346 | steps   347000 |  163.5 steps/s | disc_acc 0.386
+epoch   347 | steps   348000 |  162.5 steps/s | disc_acc 0.387
+epoch   348 | steps   349000 |  164.9 steps/s | disc_acc 0.389
+epoch   349 | steps   350000 |  164.9 steps/s | disc_acc 0.389
+epoch   350 | steps   351000 |  166.2 steps/s | disc_acc 0.387 | best skill 5 return -44.6 | logq -2.02
+epoch   351 | steps   352000 |  161.7 steps/s | disc_acc 0.388
+epoch   352 | steps   353000 |  164.7 steps/s | disc_acc 0.391
+epoch   353 | steps   354000 |  165.0 steps/s | disc_acc 0.391
+epoch   354 | steps   355000 |  165.6 steps/s | disc_acc 0.393
+epoch   355 | steps   356000 |  165.1 steps/s | disc_acc 0.394
+epoch   356 | steps   357000 |  163.3 steps/s | disc_acc 0.392
+epoch   357 | steps   358000 |  162.7 steps/s | disc_acc 0.394
+epoch   358 | steps   359000 |  165.0 steps/s | disc_acc 0.395
+epoch   359 | steps   360000 |  165.1 steps/s | disc_acc 0.393
+epoch   360 | steps   361000 |  165.2 steps/s | disc_acc 0.395 | best skill 35 return -44.4 | logq -2.03
+epoch   361 | steps   362000 |  163.3 steps/s | disc_acc 0.395
+epoch   362 | steps   363000 |  163.0 steps/s | disc_acc 0.397
+epoch   363 | steps   364000 |  164.5 steps/s | disc_acc 0.393
+epoch   364 | steps   365000 |  162.9 steps/s | disc_acc 0.399
+epoch   365 | steps   366000 |  164.3 steps/s | disc_acc 0.401
+epoch   366 | steps   367000 |  166.0 steps/s | disc_acc 0.401
+epoch   367 | steps   368000 |  164.0 steps/s | disc_acc 0.401
+epoch   368 | steps   369000 |  164.5 steps/s | disc_acc 0.397
+epoch   369 | steps   370000 |  151.7 steps/s | disc_acc 0.400
+epoch   370 | steps   371000 |  155.0 steps/s | disc_acc 0.400 | best skill 35 return -41.0 | logq -2.04
+epoch   371 | steps   372000 |  163.1 steps/s | disc_acc 0.399
+epoch   372 | steps   373000 |  163.6 steps/s | disc_acc 0.399
+epoch   373 | steps   374000 |  163.9 steps/s | disc_acc 0.402
+epoch   374 | steps   375000 |  161.8 steps/s | disc_acc 0.401
+epoch   375 | steps   376000 |  163.2 steps/s | disc_acc 0.400
+epoch   376 | steps   377000 |  164.0 steps/s | disc_acc 0.401
+epoch   377 | steps   378000 |  162.4 steps/s | disc_acc 0.400
+epoch   378 | steps   379000 |  164.3 steps/s | disc_acc 0.404
+epoch   379 | steps   380000 |  162.2 steps/s | disc_acc 0.402
+epoch   380 | steps   381000 |  162.3 steps/s | disc_acc 0.405 | best skill 35 return -37.5 | logq -2.01
+epoch   381 | steps   382000 |  163.7 steps/s | disc_acc 0.405
+epoch   382 | steps   383000 |  164.1 steps/s | disc_acc 0.403
+epoch   383 | steps   384000 |  165.7 steps/s | disc_acc 0.406
+epoch   384 | steps   385000 |  160.0 steps/s | disc_acc 0.409
+epoch   385 | steps   386000 |  167.3 steps/s | disc_acc 0.410
+epoch   386 | steps   387000 |  165.4 steps/s | disc_acc 0.410
+epoch   387 | steps   388000 |  165.0 steps/s | disc_acc 0.410
+epoch   388 | steps   389000 |  163.2 steps/s | disc_acc 0.412
+epoch   389 | steps   390000 |  162.6 steps/s | disc_acc 0.411
+epoch   390 | steps   391000 |  164.8 steps/s | disc_acc 0.412 | best skill 35 return -41.6 | logq -1.92
+epoch   391 | steps   392000 |  166.5 steps/s | disc_acc 0.411
+epoch   392 | steps   393000 |  166.3 steps/s | disc_acc 0.414
+epoch   393 | steps   394000 |  165.8 steps/s | disc_acc 0.417
+epoch   394 | steps   395000 |  166.3 steps/s | disc_acc 0.413
+epoch   395 | steps   396000 |  164.7 steps/s | disc_acc 0.418
+epoch   396 | steps   397000 |  166.2 steps/s | disc_acc 0.416
+epoch   397 | steps   398000 |  169.9 steps/s | disc_acc 0.419
+epoch   398 | steps   399000 |  167.2 steps/s | disc_acc 0.415
+epoch   399 | steps   400000 |  167.3 steps/s | disc_acc 0.415
+epoch   400 | steps   401000 |  163.8 steps/s | disc_acc 0.414 | best skill 35 return -41.3 | logq -1.95
+epoch   401 | steps   402000 |  169.2 steps/s | disc_acc 0.416
+epoch   402 | steps   403000 |  165.3 steps/s | disc_acc 0.417
+epoch   403 | steps   404000 |  165.1 steps/s | disc_acc 0.415
+epoch   404 | steps   405000 |  164.3 steps/s | disc_acc 0.413
+epoch   405 | steps   406000 |  169.5 steps/s | disc_acc 0.413
+epoch   406 | steps   407000 |  164.3 steps/s | disc_acc 0.416
+epoch   407 | steps   408000 |  159.3 steps/s | disc_acc 0.415
+epoch   408 | steps   409000 |  170.5 steps/s | disc_acc 0.417
+epoch   409 | steps   410000 |  167.9 steps/s | disc_acc 0.415
+epoch   410 | steps   411000 |  164.7 steps/s | disc_acc 0.416 | best skill 35 return -32.8 | logq -1.90
+epoch   411 | steps   412000 |  166.6 steps/s | disc_acc 0.416
+epoch   412 | steps   413000 |  167.0 steps/s | disc_acc 0.416
+epoch   413 | steps   414000 |  163.1 steps/s | disc_acc 0.418
+epoch   414 | steps   415000 |  167.4 steps/s | disc_acc 0.418
+epoch   415 | steps   416000 |  165.2 steps/s | disc_acc 0.417
+epoch   416 | steps   417000 |  166.0 steps/s | disc_acc 0.420
+epoch   417 | steps   418000 |  169.9 steps/s | disc_acc 0.421
+epoch   418 | steps   419000 |  162.5 steps/s | disc_acc 0.420
+epoch   419 | steps   420000 |  149.8 steps/s | disc_acc 0.426
+epoch   420 | steps   421000 |  166.0 steps/s | disc_acc 0.422 | best skill 35 return -33.9 | logq -1.89
+epoch   421 | steps   422000 |  164.2 steps/s | disc_acc 0.422
+epoch   422 | steps   423000 |  169.3 steps/s | disc_acc 0.425
+epoch   423 | steps   424000 |  167.6 steps/s | disc_acc 0.422
+epoch   424 | steps   425000 |  165.9 steps/s | disc_acc 0.424
+epoch   425 | steps   426000 |  163.0 steps/s | disc_acc 0.424
+epoch   426 | steps   427000 |  166.9 steps/s | disc_acc 0.425
+epoch   427 | steps   428000 |  163.3 steps/s | disc_acc 0.423
+epoch   428 | steps   429000 |  166.7 steps/s | disc_acc 0.422
+epoch   429 | steps   430000 |  167.7 steps/s | disc_acc 0.419
+epoch   430 | steps   431000 |  170.6 steps/s | disc_acc 0.423 | best skill 35 return -35.6 | logq -1.91
+epoch   431 | steps   432000 |  166.6 steps/s | disc_acc 0.424
+epoch   432 | steps   433000 |  163.7 steps/s | disc_acc 0.425
+epoch   433 | steps   434000 |  169.6 steps/s | disc_acc 0.426
+epoch   434 | steps   435000 |  168.3 steps/s | disc_acc 0.427
+epoch   435 | steps   436000 |  164.2 steps/s | disc_acc 0.429
+epoch   436 | steps   437000 |  167.9 steps/s | disc_acc 0.429
+epoch   437 | steps   438000 |  166.2 steps/s | disc_acc 0.430
+epoch   438 | steps   439000 |  165.4 steps/s | disc_acc 0.428
+epoch   439 | steps   440000 |  163.9 steps/s | disc_acc 0.429
+epoch   440 | steps   441000 |  165.6 steps/s | disc_acc 0.427 | best skill 35 return -30.4 | logq -1.90
+epoch   441 | steps   442000 |  168.5 steps/s | disc_acc 0.425
+epoch   442 | steps   443000 |  170.7 steps/s | disc_acc 0.425
+epoch   443 | steps   444000 |  166.3 steps/s | disc_acc 0.431
+epoch   444 | steps   445000 |  165.5 steps/s | disc_acc 0.426
+epoch   445 | steps   446000 |  166.7 steps/s | disc_acc 0.431
+epoch   446 | steps   447000 |  166.0 steps/s | disc_acc 0.428
+epoch   447 | steps   448000 |  164.0 steps/s | disc_acc 0.431
+epoch   448 | steps   449000 |  167.8 steps/s | disc_acc 0.428
+epoch   449 | steps   450000 |  165.2 steps/s | disc_acc 0.425
+epoch   450 | steps   451000 |  168.5 steps/s | disc_acc 0.425 | best skill 35 return -36.4 | logq -1.79
+epoch   451 | steps   452000 |  164.4 steps/s | disc_acc 0.429
+epoch   452 | steps   453000 |  167.8 steps/s | disc_acc 0.427
+epoch   453 | steps   454000 |  169.6 steps/s | disc_acc 0.429
+epoch   454 | steps   455000 |  165.3 steps/s | disc_acc 0.428
+epoch   455 | steps   456000 |  170.6 steps/s | disc_acc 0.429
+epoch   456 | steps   457000 |  166.6 steps/s | disc_acc 0.431
+epoch   457 | steps   458000 |  167.9 steps/s | disc_acc 0.430
+epoch   458 | steps   459000 |  166.9 steps/s | disc_acc 0.428
+epoch   459 | steps   460000 |  163.0 steps/s | disc_acc 0.429
+epoch   460 | steps   461000 |  167.4 steps/s | disc_acc 0.429 | best skill 35 return -35.8 | logq -1.79
+epoch   461 | steps   462000 |  164.1 steps/s | disc_acc 0.431
+epoch   462 | steps   463000 |  168.7 steps/s | disc_acc 0.433
+epoch   463 | steps   464000 |  166.8 steps/s | disc_acc 0.434
+epoch   464 | steps   465000 |  170.0 steps/s | disc_acc 0.437
+epoch   465 | steps   466000 |  168.2 steps/s | disc_acc 0.434
+epoch   466 | steps   467000 |  164.0 steps/s | disc_acc 0.433
+epoch   467 | steps   468000 |  163.5 steps/s | disc_acc 0.438
+epoch   468 | steps   469000 |  159.0 steps/s | disc_acc 0.435
+epoch   469 | steps   470000 |  160.4 steps/s | disc_acc 0.437
+epoch   470 | steps   471000 |  162.7 steps/s | disc_acc 0.436 | best skill 35 return -36.5 | logq -1.77
+epoch   471 | steps   472000 |  165.8 steps/s | disc_acc 0.438
+epoch   472 | steps   473000 |  170.5 steps/s | disc_acc 0.437
+epoch   473 | steps   474000 |  164.7 steps/s | disc_acc 0.437
+epoch   474 | steps   475000 |  168.0 steps/s | disc_acc 0.435
+epoch   475 | steps   476000 |  165.8 steps/s | disc_acc 0.439
+epoch   476 | steps   477000 |  163.8 steps/s | disc_acc 0.442
+epoch   477 | steps   478000 |  170.1 steps/s | disc_acc 0.438
+epoch   478 | steps   479000 |  167.7 steps/s | disc_acc 0.439
+epoch   479 | steps   480000 |  168.2 steps/s | disc_acc 0.439
+epoch   480 | steps   481000 |  164.9 steps/s | disc_acc 0.443 | best skill 35 return -36.2 | logq -1.70
+epoch   481 | steps   482000 |  163.5 steps/s | disc_acc 0.444
+epoch   482 | steps   483000 |  164.8 steps/s | disc_acc 0.445
+epoch   483 | steps   484000 |  162.9 steps/s | disc_acc 0.445
+epoch   484 | steps   485000 |  166.7 steps/s | disc_acc 0.444
+epoch   485 | steps   486000 |  166.3 steps/s | disc_acc 0.442
+epoch   486 | steps   487000 |  168.9 steps/s | disc_acc 0.446
+epoch   487 | steps   488000 |  167.2 steps/s | disc_acc 0.447
+epoch   488 | steps   489000 |  164.5 steps/s | disc_acc 0.448
+epoch   489 | steps   490000 |  166.5 steps/s | disc_acc 0.449
+epoch   490 | steps   491000 |  165.5 steps/s | disc_acc 0.450 | best skill 35 return -34.6 | logq -1.73
+epoch   491 | steps   492000 |  166.1 steps/s | disc_acc 0.453
+epoch   492 | steps   493000 |  170.5 steps/s | disc_acc 0.453
+epoch   493 | steps   494000 |  164.1 steps/s | disc_acc 0.450
+epoch   494 | steps   495000 |  169.7 steps/s | disc_acc 0.450
+epoch   495 | steps   496000 |  167.7 steps/s | disc_acc 0.453
+epoch   496 | steps   497000 |  168.4 steps/s | disc_acc 0.451
+epoch   497 | steps   498000 |  166.1 steps/s | disc_acc 0.452
+epoch   498 | steps   499000 |  164.4 steps/s | disc_acc 0.453
+epoch   499 | steps   500000 |  164.8 steps/s | disc_acc 0.451
+epoch   500 | steps   501000 |  166.2 steps/s | disc_acc 0.452 | best skill 35 return -35.6 | logq -1.70
+Resumed from epoch 500
